@@ -1,0 +1,107 @@
+<div class="div-conteiner">
+  <mat-card class="card-resumo">
+    <mat-card-title class="card-titulo">
+      Avaliar Tarefa
+    </mat-card-title>
+    <mat-card-content class="card-content">
+      <form>
+        <mat-card-content>
+          <div class="flex-container wrap">
+            <mat-form-field class="flex-item" appearance="standard">
+              <mat-label>Nome do Aluno</mat-label>
+              <input matInput name="nome" [(ngModel)]="resposta.aluno.nome" [ngModelOptions]="{standalone: true}"
+                disabled>
+            </mat-form-field>
+          </div>
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Tarefa
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <div class="flex-container wrap">
+                <mat-form-field class="flex-item" appearance="standard">
+                  <mat-label>Descricao da Tarefa</mat-label>
+                  <textarea matInput name="tarefa" [(ngModel)]="resposta.tarefa.descricao"
+                    [ngModelOptions]="{standalone: true}" disabled></textarea>
+                </mat-form-field>
+              </div>
+
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Resposta
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <div class="flex-container wrap">
+                <ckeditor class="rich-text" [disabled]="true" [editor]="Editor" [data]="resposta.resposta" [(ngModel)]="resposta.resposta" [ngModelOptions]="{standalone: true}"></ckeditor>
+              </div>
+
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Rubrica
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+                  <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+              </table> -->
+
+              <table class="table">
+                <tr>
+                  <th>Critério/Nível</th>
+                  <th *ngFor="let column of displayedColumns">{{column}}</th>
+                </tr>
+                <tr *ngFor="let element of resposta.tarefa.rubrica.criterios; let i= index">
+                  <td>{{element.descricao}}</td>
+                  <td *ngFor="let nivel of element.nivelDesempenhos">
+                      <input type="radio" class="myCheckbox" name="niveldescricao{{i}}" [value]="nivel.id">
+                      <!-- <mat-radio-button name="niveldescricao{{i}}">Option 1</mat-radio-button> -->
+                    {{nivel.descricao}}
+                  </td>
+                </tr>
+              </table>
+
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Comentário(s)
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <div class="flex-container wrap">
+                <mat-form-field class="flex-item" appearance="standard">
+                  <textarea matInput placeholder="Deixe um comentário" [(ngModel)]="resposta.comentario"
+                  [ngModelOptions]="{standalone: true}"></textarea>
+                </mat-form-field>
+              </div>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-card-content>
+      </form>
+      <div class="flex-container-botao2">
+        <button mat-raised-button>Voltar</button>
+        <button mat-raised-button color="primary" (click)="salvarProsseguir()">Salvar e Prosseguir</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

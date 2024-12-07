@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Novo Critério</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="criterioForm">
+    <div class="flex-container wrap">
+
+      <mat-form-field class="flex-item" appearance="standard">
+        <mat-label>Descrição</mat-label>
+        <input matInput formControlName="descricao" [(ngModel)]="criterio.descricao">
+      </mat-form-field>
+
+      <div class="flex-container-botao">
+          <button mat-mini-fab color="primary"  (click)="addItens()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      <mat-card class="expansion-panel">
+        <mat-card-title class="card-titulo">
+          Nível Desempenho
+        </mat-card-title>
+        <mat-card-content class="card-content">
+            <div formArrayName="itens" *ngFor="let item of criterioForm.get('itens')['controls']; let i = index;">
+                <ng-container [formGroupName]="i">
+                    <mat-card class="card-interno">
+                        <div class="flex-container wrap">
+                          <mat-form-field class="flex-item" appearance="standard">
+                            <mat-label>Descrição do Nível de Desempenho</mat-label>
+                            <input matInput formControlName="descricao" (ngModel)=data.nivelDesempenhos[i].descricao>
+                          </mat-form-field>
+
+                          <mat-form-field class="flex-item" appearance="standard">
+                            <mat-label>Valor</mat-label>
+                            <input matInput formControlName="valor" (ngModel)=data.nivelDesempenhos[i].valor>
+                          </mat-form-field>
+                        </div>
+                      </mat-card>
+                </ng-container>
+            </div>
+        </mat-card-content>
+      </mat-card>
+      </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="flex-container-botao2">
+    <button mat-raised-button mat-dialog-close>Cancelar</button>
+    <button mat-raised-button color="primary" cdkFocusInitial (click)="salvar()">Salvar</button>
+  </div>
+</mat-dialog-actions>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

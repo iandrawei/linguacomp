@@ -1,0 +1,26 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  mat-sidenav{
+      width: 200px;
+  }
+
+  .div-nome-usuario{
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+  .usuario{
+    float: right;
+    display: flex;
+    margin-right: 2%;
+  }
+
+  .perfil{
+      width: 100%;
+  }

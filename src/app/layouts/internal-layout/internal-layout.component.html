@@ -1,0 +1,27 @@
+<mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')" *ngIf="true">
+    <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+        <mat-icon>school</mat-icon>
+        <p>LinguaComp</p>
+        <mat-nav-list>
+            <a mat-list-item *ngIf="isProfessor" [routerLink]="'/turma'"> Turmas </a>
+            <a mat-list-item *ngIf="isProfessor" [routerLink]="'/tarefa'"> Tarefas </a>
+            <a mat-list-item *ngIf="!isProfessor" [routerLink]="'/tarefas'"> Tarefas do Aluno</a>
+            <a mat-list-item *ngIf="isProfessor" [routerLink]="'/rubrica'"> Rubricas </a>
+            <a mat-list-item *ngIf="isProfessor" [routerLink]="'/competencia'"> Competências </a>
+            <a mat-list-item *ngIf="isProfessor" [routerLink]="'/relatorio'"> Relatórios </a>
+            <a mat-list-item [routerLink]="'/'" (click)="close('toggle button')"> Sair </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <button mat-button (click)="sidenav.open()"><mdc-icon>reorder</mdc-icon> </button>
+            <div class="perfil">
+                <div class="usuario">
+                    <div><mat-icon>person</mat-icon></div>
+                    <div class="div-nome-usuario">{{nomeUsuario}}</div>
+                </div>
+            </div>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

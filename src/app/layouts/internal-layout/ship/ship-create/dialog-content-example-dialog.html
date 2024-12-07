@@ -1,0 +1,83 @@
+<h2 mat-dialog-title>Nova Embarcação</h2>
+<mat-divider></mat-divider>
+<mat-dialog-content class="mat-typography" style="margin-top: 2%;">
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Nome da Embarcação</mat-label>
+      <input matInput required>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Número de Inscrição</mat-label>
+      <input matInput required>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Número da Anatel</mat-label>
+      <input matInput required>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Ano de Construção</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Ano da Alteração</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Boca</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Pontal</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Comprimento de Regra</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Comprimento entre Perpendiculares</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Calado Carregado</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Calado Leve</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Deslocamento Carregado</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Deslocamento Leve</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-label>Porte Bruto</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-select placeholder="Tipo de Embarcação">
+        <mat-option value="option1">Option 1</mat-option>
+        <mat-option value="option2">Option 2</mat-option>
+        <mat-option value="option3">Option 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="campo-form" appearance="fill">
+      <mat-select placeholder="Área de Navegação">
+        <mat-option value="option1">Option 1</mat-option>
+        <mat-option value="option2">Option 2</mat-option>
+        <mat-option value="option3">Option 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-dialog-close mat-raised-button style="float: left;margin-left: 30px;">Voltar</button>
+  <button [mat-dialog-close]="true" cdkFocusInitial mat-raised-button style="float: right;margin-right: 30px;">Incluir</button>
+</mat-dialog-actions>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

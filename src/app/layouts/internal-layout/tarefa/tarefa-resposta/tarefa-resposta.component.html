@@ -1,0 +1,26 @@
+<div class="div-conteiner">
+  <mat-card class="card-resumo">
+    <mat-card-title class="card-titulo">
+      Responder Tarefa
+    </mat-card-title>
+    <mat-card-content class="card-content">
+      <form>
+        <mat-card-content>
+          <div class="flex-container wrap">
+            <mat-form-field class="flex-item" appearance="standard">
+              <mat-label>Descrição da tarefa</mat-label>
+              <textarea matInput name="tarefa" [(ngModel)]="tarefa.descricao" [ngModelOptions]="{standalone: true}"
+                disabled></textarea>
+            </mat-form-field>
+            <ckeditor class="rich-text" [editor]="Editor" [data]="resposta.resposta" [(ngModel)]="resposta.resposta" [ngModelOptions]="{standalone: true}"></ckeditor>
+          </div>
+        </mat-card-content>
+      </form>
+      <div class="flex-container-botao2">
+        <button mat-raised-button routerLink="/tarefas">Voltar</button>
+        <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

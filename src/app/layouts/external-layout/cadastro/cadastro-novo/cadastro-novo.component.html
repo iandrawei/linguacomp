@@ -1,0 +1,40 @@
+<div id="login-container">
+  <mat-card>
+    <mat-card-title>Novo Usuário</mat-card-title>
+    <mat-card-content>
+      <div id="inputs">
+        <form [formGroup]="form"  (ngSubmit)="onSubmit()">
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="Nome" formControlName="nome" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="Email" type="email" formControlName="email" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width-input">
+            <input id="login-password" matInput type="password" formControlName="password" placeholder="Senha" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width-input">
+            <input id="c-login-password" matInput type="password" formControlName="confirm" placeholder="Confirmar Senha" required>
+          </mat-form-field>
+
+          <div class="div-radio">
+              <label>Você é: </label>
+              <mat-radio-group [(ngModel)]="isAluno" [ngModelOptions]="{standalone: true}">
+                <mat-radio-button value="true">Aluno</mat-radio-button>
+                <mat-radio-button value="false">Professor</mat-radio-button>
+              </mat-radio-group>
+            </div>
+
+            <div class="flex-container-botao2">
+              <button mat-raised-button [routerLink]="'/login'">Cancelar</button>
+              <button mat-raised-button color="primary">Cadastrar</button>
+            </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

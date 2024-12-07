@@ -1,0 +1,40 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header style="width: 100%">
+      <mat-card-title>
+        <h2>Novo Funcionário</h2>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-divider [inset]="true" style="margin-bottom: 2%;"></mat-divider>
+      <mat-form-field class="campo-form" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput required>
+      </mat-form-field>
+
+      <mat-form-field class="campo-form" appearance="fill">
+        <mat-label>Setor</mat-label>
+        <input matInput required>
+      </mat-form-field>
+
+      <mat-form-field class="campo-form" appearance="fill">
+        <mat-select placeholder="Função">
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2">Option 2</mat-option>
+          <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="campo-form" appearance="fill">
+        <mat-label>Unidade</mat-label>
+        <input matInput required>
+      </mat-form-field>
+
+      <div>
+          <button mat-raised-button>Voltar</button>
+          <button mat-raised-button style="float: right;">Salvar</button>
+        </div>
+    </mat-card-content>
+  </mat-card>
+</div>

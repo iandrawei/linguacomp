@@ -1,0 +1,49 @@
+<div class="div-conteiner">
+  <mat-card class="card-resumo">
+    <mat-card-title class="card-titulo">
+      Auto-Avaliações
+    </mat-card-title>
+    <mat-card-content class="card-content">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="comentario">
+          <th mat-header-cell *matHeaderCellDef> Descrição </th>
+          <td mat-cell *matCellDef="let element"> {{element.comentario}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="rubrica">
+          <th mat-header-cell *matHeaderCellDef> Rubrica </th>
+          <td mat-cell *matCellDef="let element"> {{element.rubrica.descricao}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tarefa">
+          <th mat-header-cell *matHeaderCellDef> Tarefa </th>
+          <td mat-cell *matCellDef="let element"> {{element.tarefa.descricao}} </td>
+        </ng-container>
+        
+
+        <ng-container matColumnDef="acoes">
+          <th mat-header-cell *matHeaderCellDef class="th-acoes"> Ações </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu de ações">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>edit</mat-icon>
+                <span>Responder</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>delete</mat-icon>
+                <span>Acompanhar</span>
+              </button>
+            </mat-menu>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

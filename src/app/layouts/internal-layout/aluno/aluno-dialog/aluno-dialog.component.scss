@@ -1,0 +1,109 @@
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+  }
+
+  .flex-item2 {
+    width: 80%;
+    padding: 5px;
+    margin: 10px;
+  }
+  
+  .flex-item {
+    width: 70%;
+  }
+
+  .nowrap  {
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .wrap    {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .wrap li {
+    background: gold;
+  }
+
+  .wrap-reverse         {
+    -webkit-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+  }
+  .wrap-reverse li {
+    background: deepskyblue;
+  }
+
+  .expansion-panel{
+    padding: 0px;
+    margin-bottom: 2%;
+    width: 98%;
+  }
+
+  .card-titulox{
+    color: rgba(0,0,0,.54);
+    background: rgba(0,0,0,.03);
+    padding: 8px 20px;
+    font-size: 17px !important;
+  }
+
+  .card-content{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+  }
+
+  .card-interno{
+    margin-bottom: 2%;
+  }
+
+  .flex-container-botao {
+    padding: 0;
+    margin-bottom: 15px;
+    width: 97%;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .flex-container-botao2 {
+    padding: 0;
+    margin-top: 25px;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mat-dialog-actions{
+    display: contents;
+  }
+
+  .expansion-item{
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 3%;
+  }

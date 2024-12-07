@@ -1,0 +1,33 @@
+<div id="login-container">
+  <mat-card id="logo">
+    <mat-card-content>
+      <div class="div-icon" style="margin-top: 40%;">
+        <mdc-icon>school</mdc-icon>
+        <label>LinguaComp</label>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content>
+      <div id="inputs">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <mat-form-field class="full-width-input">
+            <input id="login-name" matInput placeholder="Usuário" formControlName="userName" required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width-input">
+            <input id="login-password" matInput type="password" placeholder="Senha" formControlName="password" required>
+          </mat-form-field>
+          <div style="margin-top: 5%;">
+            <button mat-raised-button color="primary">Login</button>
+          </div>
+          <div class="div-link">
+            <a mat-button color="primary" href="/register">Ainda não tem cadastro?</a>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

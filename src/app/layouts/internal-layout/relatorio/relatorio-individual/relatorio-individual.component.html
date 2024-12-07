@@ -1,0 +1,21 @@
+<div class="div-conteiner">
+
+  <mat-card class="card-resumo">
+    <mat-card-title class="card-titulo">
+      Acompanhamento da Turma
+    </mat-card-title>
+
+    <mat-card-content class="card-content">
+
+      <div class="chart-wrapper">
+        <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                [colors]="doughnutColors">
+        </canvas>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

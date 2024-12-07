@@ -1,0 +1,78 @@
+<div class="div-conteiner">
+  <mat-card>
+    <mat-card-title class="card-titulo">
+      Nova Tarefa
+    </mat-card-title>
+    <form>
+      <mat-card-content class="card-content">
+        <div class="flex-container wrap">
+          <mat-form-field class="flex-item" appearance="standard">
+            <mat-label>Descrição</mat-label>
+            <input matInput name="descricao" [(ngModel)]="tarefa.descricao" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+
+          <mat-form-field class="flex-item" appearance="standard">
+            <mat-label>Tipo</mat-label>
+            <mat-select [(value)]="tarefa.tipo">
+                <mat-option value="Escrita">Produção Escrita</mat-option>
+                <mat-option value="Questionário">Questionário</mat-option>
+              </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="flex-container wrap">
+          <mat-form-field class="flex-item" appearance="standard">
+            <mat-label>Data limite para entrega</mat-label>
+            <input matInput [(ngModel)]="tarefa.dataLimite" name="datalimite" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+
+          <mat-form-field class="flex-item" appearance="standard">
+              <mat-label>O aluno pode autoavaliar-se</mat-label>
+              <mat-select [(ngModel)]="tarefa.avaliacaoAluno" [ngModelOptions]="{standalone: true}">
+                <mat-option *ngFor="let l of lista" [value]="l.value">
+                  {{l.texto}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="flex-container wrap">
+          <mat-form-field class="flex-item" appearance="standard">
+            <mat-label>Turma</mat-label>
+            <mat-select [(ngModel)]="turma" [ngModelOptions]="{standalone: true}">
+              <mat-option *ngFor="let turma of turmas" [value]="turma">
+                {{turma.nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="flex-item" appearance="standard">
+            <mat-label>Competência</mat-label>
+            <mat-select [(ngModel)]="competencia" [ngModelOptions]="{standalone: true}">
+              <mat-option *ngFor="let competencia of competencias" [value]="competencia">
+                {{competencia.nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="flex-container wrap">
+          <mat-form-field class="flex-item" appearance="standard">
+            <mat-label>Rubrica</mat-label>
+            <mat-select [(ngModel)]="rubrica" [ngModelOptions]="{standalone: true}">
+              <mat-option *ngFor="let rubrica of rubricas" [value]="rubrica">
+                {{rubrica.descricao}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <div class="div-botao">
+        <div class="flex-container-botao2">
+          <button mat-raised-button [routerLink]="'/tarefa'">Voltar</button>
+          <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</div>

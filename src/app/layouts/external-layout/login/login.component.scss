@@ -1,0 +1,50 @@
+#login-container{
+  display: flex;
+  justify-content: center;
+
+}
+
+#logo{
+  width: 150px;
+}
+
+mat-card {
+  width: 400px;
+    margin-top: 9em;
+    text-align: center;
+  }
+
+  mat-card-content{
+    display: flex;
+
+  }
+
+  mdc-icon{
+    font-size: 80px;
+    color: #000046;
+  }
+
+  #inputs{
+    display: flex;
+    flex-direction: column;
+  }
+
+  mat-form-field{
+    width: 100%;
+  }
+
+  form > button{
+    margin-top: 20px;
+  }
+
+  .div-link{
+    margin-top: 9%;
+  }
+
+  .div-icon{
+    margin-top: 40%;
+  }
+
+// #login-name, #login-password{
+// width: 100%;
+// }

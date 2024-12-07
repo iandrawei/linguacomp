@@ -1,0 +1,123 @@
+  .form-input{
+    width: 40%;
+  }
+
+  .card-titulo{
+    color: rgba(0,0,0,.54);
+    background: rgba(0,0,0,.03);
+    padding: 8px 20px;
+    font-size: 17px !important;
+  }
+
+  .mat-card{
+    padding: 0px;
+  }
+
+  .card-content{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+  }
+
+  .card-resumo{
+    margin-top: 2%;
+  }
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .example-container > * {
+    width: 100%;
+  }
+
+  .flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .flex-container-botao {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .flex-container-botao2 {
+    padding: 0;
+    margin-top: 25px;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nowrap  {
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .wrap    {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .wrap li {
+    background: gold;
+  }
+
+  .wrap-reverse         {
+    -webkit-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+  }
+  .wrap-reverse li {
+    background: deepskyblue;
+  }
+
+  .flex-item2 {
+    width: 80%;
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .flex-item {
+    width: 40%;
+    padding: 5px;
+    margin: 10px;
+  }
+
+  table {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .form-rubrica-botoes{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-input{
+    width: 70%;
+  }

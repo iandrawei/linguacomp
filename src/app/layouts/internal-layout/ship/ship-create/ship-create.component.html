@@ -1,0 +1,124 @@
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+
+      <mat-horizontal-stepper #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup" style="margin-top: 2%;">
+            <ng-template matStepLabel style="margin-left: 20%">Armador</ng-template>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-label>Nome da Embarcação</mat-label>
+              <input matInput required>
+            </mat-form-field>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-select placeholder="Tipo Pessoa">
+                <mat-option *ngFor="let l of list" ([pessoaSelecionada])="l.value">
+                  {{l.texto}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-label>CPF</mat-label>
+              <input matInput required>
+            </mat-form-field>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-label>Telefone</mat-label>
+              <input matInput required>
+            </mat-form-field>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-label>CEP</mat-label>
+              <input matInput required>
+            </mat-form-field>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-label>Rua</mat-label>
+              <input matInput required>
+            </mat-form-field>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-label>Número</mat-label>
+              <input matInput required>
+            </mat-form-field>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-label>Complemento</mat-label>
+              <input matInput required>
+            </mat-form-field>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-label>Bairro</mat-label>
+              <input matInput required>
+            </mat-form-field>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-label>Cidade</mat-label>
+              <input matInput required>
+            </mat-form-field>
+
+            <mat-form-field class="campo-form" appearance="fill">
+              <mat-label>Estado</mat-label>
+              <input matInput required>
+            </mat-form-field>
+
+            <div>
+              <button mat-raised-button matStepperNext style="float: right;margin-right: 30px;">Avançar</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <div>
+              <button mat-raised-button color="accent" (click)="openDialog()">
+                  <mat-icon>add</mat-icon>
+                  Adicionar Embarcação
+              </button>
+          </div>
+          <form [formGroup]="secondFormGroup" style="margin-top: 2%;">
+            <ng-template matStepLabel style="margin-right: 20%">Embarcação</ng-template>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- Position Column -->
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+              </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <div>
+              <button mat-raised-button matStepperPrevious style="float: left;margin-left: 30px;">Voltar</button>
+              <button mat-raised-button matStepperNext style="float: right;margin-right: 30px;">Finalizar</button>
+            </div>
+          </form>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </mat-card-content>
+  </mat-card>
+</div>
